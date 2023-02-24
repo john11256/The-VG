@@ -1,0 +1,21 @@
+.search{
+    width: 350px;
+    height: 20px;
+    border-radius: 15%;
+    text-align: left;
+    font-size: 15px;    
+    font-family:Georgia, 'Times New Roman', Times, serif;
+    font-style: italic;    
+}
+
+    .button_search{
+        outline: rgb(255, 255, 255) 1px solid;
+        cursor: pointer;
+        font-size: 15px;
+        font-family:Georgia, 'Times New Roman', Times, serif;
+        font-style: italic;
+
+        border-radius: 15%;
+        background-image: linear-gradient(45deg,purple, black);
+        color: white;
+    }

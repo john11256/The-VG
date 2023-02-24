@@ -1,0 +1,44 @@
+.card2{
+    background: url('../complements/2.jpg');
+    width: 300px;
+    height: 360px;
+    border-radius: 20px;
+    border: rgb(255, 255, 255) 3px solid ;
+    background-size: cover;
+    box-shadow: 3px 5px 5px rgba(3, 32,51,.8);
+}
+
+.card2:hover {
+    border: goldenrod 3px solid;
+}
+
+.button2{
+    width: 40%;
+    justify-content: center;
+    background: white;
+    opacity: 0.6;
+    cursor: pointer;
+}
+
+.image{
+    border-radius: 10px;
+    border: rgb(37, 37, 37) 3px solid ;
+    width: 270px;
+    height:210px;
+   
+}    
+
+h3 {
+    font-family:Georgia, 'Times New Roman', Times, serif;
+    text-align: center;
+    color: white;
+    margin: 0.5rem;
+}
+
+h5 {
+    font-family:Georgia, 'Times New Roman', Times, serif;
+    text-align: center;
+    color: white;
+    
+}
+
