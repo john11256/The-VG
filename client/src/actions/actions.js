@@ -84,6 +84,13 @@ export function postVG(payload){
     }
 };
 
+export function postLog(payload){
+    return async function (dispatch){
+        const login = await axios.post('http://localhost:3001/login',payload); // En esa ruta hacer el post del payload
+        return login;
+    }
+};
+
 // funcion para entrar al detalle 
 export function getDetail (payload) {
     return async function (dispatch) {

@@ -84,6 +84,10 @@ function rootReducer (state = initialState, action){
             return {
                 ...state
             };
+        case 'POST_LOG':
+            return {
+                ...state
+            };
         case 'GET_NAME_VG':
             return {
                 ...state,
