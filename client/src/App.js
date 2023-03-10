@@ -14,7 +14,7 @@ function App() {
   return ( 
     <BrowserRouter>
     <div className="App">
-    <Route path = '/' component={Navbar}/>
+    {/* <Route path = '/' component={Navbar}/> */}
     <Switch>                     {/* Se mueve solo de lo que está embolviendo */}
         <Route path = '/home' component={Home} />
         <Route path = '/videogame' component={VGCreate} />

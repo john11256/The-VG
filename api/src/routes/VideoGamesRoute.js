@@ -68,4 +68,20 @@ router.post("/", async (req,res) => {
     };
 });
 
+router.put("/:id",async (req,res) => {
+    const id = req.params.id;
+    const arr = req.body.rating
+    const rating =arr.reduce((a,b)=> a+b)/arr.length;
+    console.log(arr);
+    console.log(rating);
+    let VGTotal = await getAllInfo();
+    let VGId = VGTotal.find((ev) => ev.id == id);
+    try {
+        VGId.rating=rating
+        res.status(200).send(VGId);
+    } catch (error) {
+        res.status(404).send(error.message);
+    } 
+})
+
 module.exports = router;

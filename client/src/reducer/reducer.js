@@ -5,7 +5,8 @@ const initialState = {
     genre : [],
     allVideoGames:[],
     platform : [],
-    detail: {}
+    detail: {},
+    stars:[]
 }
 
 function rootReducer (state = initialState, action){
@@ -97,7 +98,12 @@ function rootReducer (state = initialState, action){
             return {
                 ...state,
                 detail: action.payload
-            }
+            };
+        case 'STARS_PROM':
+            return{
+                ...state,
+                stars: [...state.stars,action.payload],
+      }
         default:
             return {...state};
     }

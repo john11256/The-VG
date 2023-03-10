@@ -1,6 +1,4 @@
 // Van las acciones que se van a necesitar,cada accion se va para el reducer 
-
-
 import axios from 'axios';
 
 // Funcion para traer los video juegos
@@ -95,7 +93,7 @@ export function postLog(payload){
 export function getDetail (payload) {
     return async function (dispatch) {
         try {
-            var url = await axios.get(`http://localhost:3001/videogame/${payload}`);
+            const url = await axios.get(`http://localhost:3001/videogame/${payload}`);
             return dispatch({
                 type: 'GET_DETAIL',
                 payload: url.data
@@ -104,5 +102,13 @@ export function getDetail (payload) {
             console.log(error);
         }
     }
-}
+};
+
+export function ratingProm(payload) {
+    return{
+        type: 'STARS_PROM',
+        payload
+
+    }
+};
     

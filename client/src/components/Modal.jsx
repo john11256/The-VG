@@ -21,7 +21,6 @@ export default function Modal ({children,state,changeState}) {
     function handleSubmit(e){
         e.preventDefault();
         dispatch(postLog(dates));
-        alert('personaje creado')
         setDates({   
             email:'',
             password:''

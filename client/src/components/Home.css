@@ -1,5 +1,5 @@
 body{
-    background: black
+    background: linear-gradient(to left, rgba(30,35,38,.9), black);
 }
 
 .searchbar_container{
@@ -37,12 +37,11 @@ body{
     float: right;
 }
 .paginado_container {
-    padding-bottom: 30px;
-    margin-left: 400px;
     float: left;
     position: relative;
-    width: 500px;
-    height: 40px;
+    width: 100%;
+
+    justify-content: center;
 }
 
 h1{
