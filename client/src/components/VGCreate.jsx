@@ -18,14 +18,12 @@ export default function VGCreate(){
     const history = useHistory();
 
     const genreState = useSelector((state) => state.genre)  
-    const platformState = useSelector((state) => state.platform)  // guardo el estado que declare en el reducer
+    const platformState = useSelector((state) => state.platform)  // guardo el estado que declare en el reducers
 
     const [errorsName,setErrorsName] = useState({});
-    const [errorsDescription,setErrorsDescription] = useState({});
     const [errorsPlatform,setErrorsPlatform] = useState({});
 
     const [buttonOnName,setButtonOnName] = useState(false);
-    const [buttonOnDescription,setButtonOnDescription] = useState(false);
     const [buttonOnPlatform,setButtonOnPlatform] = useState(false);
 
     const [input, setInput] = useState({
@@ -33,7 +31,6 @@ export default function VGCreate(){
         description:'',
         image:'',
         released:'',
-        rating: '',
         platforms:[],
         genres:[]
     });
@@ -60,17 +57,6 @@ export default function VGCreate(){
         };
     };
 
-    function handleChangeOnDescription (e){
-        setErrorsDescription(validate({
-            ...input,
-            [e.target.name]: e.target.value
-        }));
-        if(e.target.value.length>0){
-            setButtonOnDescription(true)
-        }else{
-            setButtonOnDescription(false)
-        };
-    };
 
     function handleChangeOnPlatform (e){
         if(e.target.value.length>0){
@@ -114,7 +100,6 @@ export default function VGCreate(){
         alert('personaje creado')
         setInput({   // agarra todo y lo pasa vacio
             name:'',
-            description:'',
             image:'',
             released:'',
             rating:'',
@@ -171,20 +156,6 @@ export default function VGCreate(){
                     onChange={(e) => handleChange(e)}
                     />
                 </div>            
-
-                <div className="description">
-                    <label>Description: </label>
-                    <input className='input3'
-                    type = 'text'
-                    value={input.description}
-                    name = 'description'
-                    onChange={(e) => {
-                        handleChange(e)
-                        handleChangeOnDescription(e)
-                    }}
-                    placeholder={errorsDescription.name}
-                    />
-                </div>
 
                 <div className="released">
                     <label>Released: </label>
@@ -247,7 +218,7 @@ export default function VGCreate(){
                 </div>
 
                 <button className="button_create" 
-                disabled={!buttonOnName || !buttonOnDescription || !buttonOnPlatform} 
+                disabled={!buttonOnName || !buttonOnPlatform} 
                 type = 'submit'>Create</button>
                 <Link to = '/home'>
                     <button className="button_back">Back</button>

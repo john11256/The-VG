@@ -31,7 +31,6 @@ export default function Detail(){
         <div className="card3" >
                 <h1>{detail.name}</h1>
                 <img className="image2" src = {detail.image} alt = "img not found" width="200px" height="250px" />
-                <a>Description: {detail.description}</a>
                 <a>Released: {detail.released? detail.released:'Not defined'}</a>
                 <Rating
                 initialRating={rating2}
@@ -41,9 +40,9 @@ export default function Detail(){
                 readonly={true}
                 color = {"#ffc107"}
                 />
-                <a>Genres: {!detail.createdInDB? detail.genres + ' ' : detail.genres.map((ev) => ev.name + ' ')}</a>
-                <a>Platforms: {!detail.createdInDB? detail.platforms + ' ' : detail.platforms.map((ev) => ev.name + ' ')}</a>
-                 {/* <Rating2/> */}
+                <a>Genres: {detail.genres2 + ' ' }</a>
+                <a>Platforms: {detail.platforms2 + ' '}</a>
+                 <Rating2/>
                 <Link to = '/home'> <button className="button3" >Back</button></Link>
          </div>   
     )

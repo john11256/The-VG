@@ -5,8 +5,9 @@ const initialState = {
     genre : [],
     allVideoGames:[],
     platform : [],
-    detail: {},
-    stars:[]
+    detail: [],
+    stars:[],
+
 }
 
 function rootReducer (state = initialState, action){
@@ -29,8 +30,8 @@ function rootReducer (state = initialState, action){
             };
         case 'FILTER_BY_GENRE':
             const allGenres = state.allVideoGames
-            const genreFiltered = action.payload === 'All' ? allGenres : allGenres.filter((ev) => ev.genres.includes(action.payload) 
-            || (ev.createdInDB && ev.genres.map((ev) => ev.name).includes(action.payload)))
+            const genreFiltered = action.payload === 'All' ? allGenres : allGenres.filter((ev) => ev.genres2.includes(action.payload))
+            // || (ev.createdInDB && ev.genres.map((ev) => ev.name).includes(action.payload)))
             return {
                 ...state,
                 videoGames: genreFiltered
@@ -97,13 +98,18 @@ function rootReducer (state = initialState, action){
         case 'GET_DETAIL':
             return {
                 ...state,
-                detail: action.payload
+                detail: action.payload 
             };
         case 'STARS_PROM':
             return{
                 ...state,
                 stars: [...state.stars,action.payload],
-      }
+            };
+        case 'PUNTUATION':
+            return{
+                ...state,
+                puntuation:[...state.puntuation,action.payload]
+            }
         default:
             return {...state};
     }

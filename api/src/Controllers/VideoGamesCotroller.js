@@ -14,16 +14,16 @@ const getApiInfo = async () => {
 
     const info = await url.map((ev) => {
         return {
-            id: ev.id,
             name: ev.name,
             released: ev.released,
             rating: ev.rating,
-            platforms: ev.platforms.map((ev) => ev.platform.name),
-            genres: ev.genres.map((ev) => ev.name),
+            platforms2: ev.platforms.map((ev) => ev.platform.name),
+            genres2: ev.genres.map((ev) => ev.name),
             image: ev.background_image,
         };
     });
-    return info;
+    const DB = await Videogame.bulkCreate(info)
+    return DB;
 };
 
 // Para traer la nformcion de la DB
@@ -51,13 +51,14 @@ const getDBInfo = async () => {
 
 
 // Para unir las dos informaciones 
-const getAllInfo = async () => {
-    const apiinfo = await getApiInfo();
-    const dbinfo = await getDBInfo();
-    const allinfo = [...apiinfo, ...dbinfo];
-    return allinfo;
-};
+//const getAllInfo = async () => {
+    // const apiinfo = await getApiInfo();
+    //const dbinfo = await getDBInfo();
+    // const allinfo = [...apiinfo, ...dbinfo];
+    //return dbinfo;
+//};
 
 module.exports = {
-    getAllInfo,
+    getDBInfo,
+    getApiInfo
 }

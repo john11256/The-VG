@@ -111,7 +111,7 @@ export default function Home () {
                                 name = {ev.name} 
                                 image = {ev.image} 
                                 id = {ev.id}
-                                genres = {!ev.createdInDB? ev.genres + ' ' : ev.genres.map((ev) => ev.name + ' ')}
+                                genres = {ev.genres2? ev.genres2 + ' ' :  ev.genres.map((ev) => ev.name + ' ') }
                                 />
                         </div>
                     )
